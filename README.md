@@ -314,4 +314,4 @@ Ao acessarmos /admin/adicionar_post.php, somos avisados por um alert que devemos
 Ao adicionarmos um arquivo, somos redirecionados para uma página que possui a flag impressa.
 
 
------ 
+**obs.: não consegui replicar essa solução novamente, por algum motivo os parametros não eram aceitos.**
