@@ -14,8 +14,8 @@
     1. Web the flags #02
     1. Web the flags #03
     1. Web the flags #04
-    1. Web the flags #5
-    1. Web the flags #6
+    1. Web the flags #05
+    1. Web the flags #06
     
     
 ## Encoding and Cryptography
@@ -156,17 +156,7 @@ Após muito trabalho traduzindo a conversa, obtemos as informações necessária
 
 ## Web
 
-
-### 
-
-**Enunciado**
-
-**Resolução**
-
------ 
-
-
-### 
+### Web the flags #01
 
 **Enunciado**
 
@@ -175,7 +165,7 @@ Após muito trabalho traduzindo a conversa, obtemos as informações necessária
 ----- 
 
 
-### 
+### Web the flags #02
 
 **Enunciado**
 
@@ -184,7 +174,7 @@ Após muito trabalho traduzindo a conversa, obtemos as informações necessária
 ----- 
 
 
-### 
+### Web the flags #03
 
 **Enunciado**
 
@@ -193,7 +183,7 @@ Após muito trabalho traduzindo a conversa, obtemos as informações necessária
 ----- 
 
 
-### 
+### Web the flags #04
 
 **Enunciado**
 
@@ -202,7 +192,16 @@ Após muito trabalho traduzindo a conversa, obtemos as informações necessária
 ----- 
 
 
-### 
+### Web the flags #05
+
+**Enunciado**
+
+**Resolução**
+
+----- 
+
+
+### Web the flags #06
 
 **Enunciado**
 
