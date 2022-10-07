@@ -1,26 +1,29 @@
 # CTF-Elytron-write-up
 
 1. Encoding and Cryptography
-    1. Unbase the secrets #01 
-    1. Unbase the secrets #02 
-    1. Files as stream of data 
+    1. [Unbase the secrets 01](#unbase-the-secrets-01)
+    1. [Unbase the secrets 02](#unbase-the-secrets-02) 
+    1. [Files as stream of data](#unbase-the-secrets-03) 
 1. Forensics
-    1. Find me between bytes
+    1. [Find me between bytes](#find-me-between-bytes)
 1. Traffic Analysis
-    1. Investigação de Tráfego Suspeito #01
-    1. Investigação de Tráfego Suspeito #02
+    1. [Investigação de Tráfego Suspeito 01](#investigação-de-tráfego-suspeito-01)
+    1. [Investigação de Tráfego Suspeito 02](#investigação-de-tráfego-suspeito-01)
 1. Web
-    1. Web the flags #01
-    1. Web the flags #02
-    1. Web the flags #03
-    1. Web the flags #04
-    1. Web the flags #05
-    1. Web the flags #06
+    1. [Web the flags 01](#web-the-flags-01)
+    1. [Web the flags 02](#web-the-flags-02)
+    1. [Web the flags 03](#web-the-flags-03)
+    1. [Web the flags 04](#web-the-flags-04)
+    1. [Web the flags 05](#web-the-flags-05)
+    1. [Web the flags 06](#web-the-flags-06)
     
     
 ## Encoding and Cryptography
 
-### Unbase the secrets #01 
+### Unbase the secrets 01 
+
+**Pontuação**
+100
 
 **Enunciado**
 
@@ -40,7 +43,10 @@ Ao decodificar o texto, obtemos um novo texto codificado (também em base64). Pa
 
 -----
 
-### Unbase the secrets #02 
+### Unbase the secrets 02 
+
+**Pontuação**
+150
 
 **Enunciado**
 
@@ -57,6 +63,9 @@ Ao colocar o texto codificado em um [identificador de hashes](https://www.dcode.
 ---- 
 
 ### Files as stream of data 
+
+**Pontuação**
+200
 
 **Enunciado**
 
@@ -77,6 +86,9 @@ Para isso, devemos utilizar um [conversor](https://codebeautify.org/hex-string-c
 ## Forensics
 
 ### Find me between bytes
+
+**Pontuação**
+200
 
 **Enunciado**
 
@@ -109,7 +121,10 @@ Como saída obtemos um arquivo com a extensão .jfif. A flag está justamente im
 
 ## Traffic Analysis
 
-### Investigação de Tráfego Suspeito #01
+### Investigação de Tráfego Suspeito 01
+
+**Pontuação**
+300
 
 **Enunciado**
 
@@ -128,7 +143,10 @@ O enunciado inclui um arquivo .pcap. Ao abrirmos o arquivo no Wireshark encontra
 
 ``` MACK{icmp} ```
 
-### Investigação de Tráfego Suspeito #02
+### Investigação de Tráfego Suspeito 02
+
+**Pontuação**
+500
 
 **Enunciado**
 
@@ -158,7 +176,10 @@ Após muito trabalho traduzindo a conversa, obtemos as informações necessária
 
 Todas os desafios possuem a URL https://mackenzie-web-challenges.chals.io 
 
-### Web the flags #01
+### Web the flags 01
+
+**Pontuação**
+100
 
 **Enunciado**
 
@@ -173,7 +194,10 @@ Ao inspecionarmos o código-fonte do html, encontramos a flag como um comentári
 ----- 
 
 
-### Web the flags #02
+### Web the flags 02
+
+**Pontuação**
+100
 
 **Enunciado**
 
@@ -192,7 +216,10 @@ Como sugerido pelo enunciado, devemos fazer o fuzzing dos IDs até encontrarmos 
 ----- 
 
 
-### Web the flags #03
+### Web the flags 03
+
+**Pontuação**
+300
 
 **Enunciado**
 
@@ -221,7 +248,10 @@ Ao acessarmos o arquivo inserido em ../payload.php, temos impresso no html o con
 ----- 
 
 
-### Web the flags #04
+### Web the flags 04
+
+**Pontuação**
+150
 
 **Enunciado**
 
@@ -236,7 +266,10 @@ Como a dica sugere, devemos acessar o arquivo robots.txt. Além da flag, o arqui
 ----- 
 
 
-### Web the flags #05
+### Web the flags 05
+
+**Pontuação**
+200
 
 **Enunciado**
 
@@ -263,7 +296,10 @@ Ao acessarmos o arquivo /posts.php?id=../payload.php, teremos impressos todos os
 ----- 
 
 
-### Web the flags #06
+### Web the flags 06
+
+**Pontuação**
+200
 
 **Enunciado**
 
