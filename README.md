@@ -101,7 +101,7 @@ Este desafio requer cavar um pouco mais fundo do que apenas "strings" para encon
 
 **Resolução**
 
-Esse desafio inclui um arquivo executável no formato *elf* que deve ser baixado. O arquivo imprime um flag decoy ao ser executado, isto é, uma flag incorreta.
+Esse desafio inclui um arquivo executável no formato *elf* que deve ser baixado. O arquivo imprime um flag decoy ao ser executado.
 
 Podemos analisar a possibilidade de bufferoverflow, apesar de nada indicar que o arquivo recebe qualquer entrada de dados. Ao procurarmos por symbols, torna-se claro que o programa não recebe nenhum input:
 
