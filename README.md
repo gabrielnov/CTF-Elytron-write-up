@@ -248,6 +248,7 @@ foreach($fileList as $filename){
 Ao acessarmos o arquivo /posts.php?id=../payload.php, teremos impressos todos os arquivos. Encontramos um arquivo .txt na pasta. Ao abrirmos, encontramos a flag:
 
 ``` MACK{Fith_flag_G0t_RCE} ```
+
 ----- 
 
 
