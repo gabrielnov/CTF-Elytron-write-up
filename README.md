@@ -156,11 +156,19 @@ Após muito trabalho traduzindo a conversa, obtemos as informações necessária
 
 ## Web
 
+Todas os desafios possuem a URL https://mackenzie-web-challenges.chals.io 
+
 ### Web the flags #01
 
 **Enunciado**
 
+Este é o primeiro desafio de web. Ao acessar o serviço exposto, procure pela flag nos locais mais fáceis.
+
 **Resolução**
+
+Ao inspecionarmos o código-fonte do html, encontramos a flag como um comentário.
+
+MACK{First_flag_in_the_html_source_code} 
 
 ----- 
 
@@ -169,7 +177,17 @@ Após muito trabalho traduzindo a conversa, obtemos as informações necessária
 
 **Enunciado**
 
+A segunda flag desta aplicação web super insegura precisa ser encontrada tentando um pouco mais do que o que se pode contar...
+
 **Resolução**
+
+A página inicia possui uma sequência de posts. Nota-se que cada post encontra-se em um arquivo .txt que possui um ID numérico:
+
+/posts.php?id=1.txt, /posts.php?id=2.txt, /posts.php?id=3.txt, /posts.php?id=4.txt, /posts.php?id=5.txt
+
+Como sugerido pelo enunciado, devemos fazer o fuzzing dos IDs até encontrarmos o arquivo 9.txt, que possui a flag.
+
+``` MACK{Second_flag_Always_look_a_little_bit_further}  ``` 
 
 ----- 
 
@@ -178,7 +196,16 @@ Após muito trabalho traduzindo a conversa, obtemos as informações necessária
 
 **Enunciado**
 
+Agora que você conseguiu enumerar algumas informações a mais na aplicação super vulnerável, é hora de ir um pouco mais além...
+
+O que será que tem no source code PHP da aplicação?
+
+Encontre a próxima flag lendo o conteúdo do arquivo index.php.
+
+
 **Resolução**
+
+Apesar de ser a terceira flag, é mais fácil resolver os outros desafios antes desse. Como a aplicação aceita inputs de novos arquivos (desafio 6), devemos inserir um payload php que nos permita acessar o conteúdo do index.php
 
 ----- 
 
@@ -187,7 +214,13 @@ Após muito trabalho traduzindo a conversa, obtemos as informações necessária
 
 **Enunciado**
 
+Você é um robô???
+
 **Resolução**
+
+Como a dica sugere, devemos acessar o arquivo robots.txt. Além da flag, o arquivo nos indica o caminho /admin que deverá ser utilizado nos próximos desafios.
+
+``` MACK{Fourth_flag_I_am_not_a_robot} ```
 
 ----- 
 
@@ -196,8 +229,25 @@ Após muito trabalho traduzindo a conversa, obtemos as informações necessária
 
 **Enunciado**
 
+Agora você precisa encontrar um arquivo oculto no backend. Seu nome não é previsível. Para contra-lo, você precisa conseguir ver o que está no diretório acima.
+
 **Resolução**
 
+Devemos inserir um arquivo com o nome ../payload.php e um corpo com o nosso payload.
+
+```
+<?php
+
+$fileList = glob('.');
+
+foreach($fileList as $filename){
+   echo $filename, '<br>'; 
+}
+```
+
+Ao acessarmos o arquivo /posts.php?id=../payload.php, teremos impressos todos os arquivos. Encontramos um arquivo .txt na pasta. Ao abrirmos, encontramos a flag:
+
+``` MACK{Fith_flag_G0t_RCE} ```
 ----- 
 
 
@@ -205,6 +255,13 @@ Após muito trabalho traduzindo a conversa, obtemos as informações necessária
 
 **Enunciado**
 
+Você consegue mostrar a flag na tela ao acessar adicionar_post.php? Analise os dados da requisição e veja o que consegue.
+
 **Resolução**
+
+Ao acessarmos /admin/adicionar_post.php, somos avisados por um alert que devemos incluir na requisição os parâmetros nome e corpo. Ao realizarmos testes, vemos que o arquivo que inserirmos aparecerá na página inicial.
+
+Ao adicionarmos um arquivo, somos redirecionados para uma página que possui a flag impressa.
+
 
 ----- 
