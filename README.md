@@ -107,7 +107,7 @@ Podemos analisar a possibilidade de bufferoverflow, apesar de nada indicar que o
 
 ``` nm -D only_a_binary ```
 
- Ao utilizarmos o *strings* no programa não é possível encontrar nenhuma outra string que indique a flag. Entretanto, encontra-se o termo JFIF, o que nos indica um possível header de um arquivo de imagem. Além disso, outras sequências de números e letras são caraterísticas de arquivos de imagem.
+ Ao utilizarmos o *strings* no arquivo não é possível encontrar nenhuma outra string que indique a flag. Entretanto, encontra-se os bytes que formam 'JFIF', o que nos indica um possível header de um arquivo de imagem. Além disso, outras sequências de bytes são caraterísticas de arquivos de imagem.
  
 Devemos então extrair o arquivo .jfif contido dentro do binário. Para isso podemos editar os bytes do arquivo, mantendo apenas o que está entre a sequência FF D8 e a sequência FF D9. Abrimos o arquivo resultante como um jfif e obtemos a flag.
 
