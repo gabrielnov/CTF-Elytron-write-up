@@ -275,7 +275,7 @@ Como a dica sugere, devemos acessar o arquivo robots.txt. Além da flag, o arqui
 
 **Enunciado**
 
-Agora você precisa encontrar um arquivo oculto no backend. Seu nome não é previsível. Para contra-lo, você precisa conseguir ver o que está no diretório acima.
+Agora você precisa encontrar um arquivo oculto no backend. Seu nome não é previsível. Para encontrá-lo, você precisa conseguir ver o que está no diretório acima.
 
 **Resolução**
 
