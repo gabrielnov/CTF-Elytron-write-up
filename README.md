@@ -58,6 +58,10 @@ Agora que você já consegue reconhecer padrões de base64, é hora de partir pa
 
 **Resolução**
 
+A hash possui erroneamente um espaço em branco no meio. Deve-se juntar as duas partes em uma só hash e decodificá-la.
+
+``` JJLECVKHKMZTGSKJGJCEWTJSG5DU2WSGGYZEYVCMGVKEQSZTKM3UOUKZKRBVQM2EI5JFSRCDJZNFKTSRGJMDEPJ5HUFA==== ```
+
 Ao colocar o texto codificado em um [identificador de hashes](https://www.dcode.fr/cipher-identifier), notamos que trata-se de base32. Essa flag funciona de maneira semelhante à anterior. Ao decodificarmos a primeira base32, obtemos outro texto codificado. Devemos novamente decodificar esse texto utilizando base32 para obtermos a flag.
 
 ``` MACK{B453_32_is_fun_411_c4p174l5} ```
