@@ -40,7 +40,7 @@ Ao decodificar o texto, obtemos um novo texto codificado (também em base64). Pa
 
 -----
 
-### Unbase the secrets #01 
+### Unbase the secrets #02 
 
 **Enunciado**
 
@@ -74,9 +74,51 @@ Para isso, devemos utilizar um [conversor](https://codebeautify.org/hex-string-c
 
 -----
 
+## Forensics
+
+### Find me between bytes
+
+**Enunciado**
+
+Este desafio requer cavar um pouco mais fundo do que apenas "strings" para encontrar a flag correta. Analise o binário anexo e pontue com a flag oculta.
+
+<only_a_binary>
+
+
+**Resolução**
+
+Esse desafio inclui um arquivo executável no formato *elf* que deve ser baixado. O arquivo imprime um flag decoy ao ser executado, isto é, uma flag incorreta.
+
+Podemos analisar a possibilidade de bufferoverflow, apesar de nada indicar que o arquivo recebe qualquer entrada de dados. Ao procurarmos por symbols, torna-se claro que o programa não recebe nenhum input:
+
+``` nm -D only_a_binary ```
+
+ Ao utilizarmos o *strings* no programa não é possível encontrar nenhuma outra string que indique a flag. Entretanto, encontra-se o termo JFIF, o que nos indica um possível header de um arquivo de imagem. Além disso, outras sequências de números e letras são caraterísticas de arquivos de imagem.
+ 
+Devemos então extrair o arquivo .jfif contido dentro do binário. Para isso podemos editar os bytes do arquivo, mantendo apenas o que está entre a sequência FF D8 e a sequência FF D9. Abrimos o arquivo resultante como um jfif e obtemos a flag.
+
+Entretanto, o jeito mais fácil de obter a flag é utilizar o [foremost](https://linux.die.net/man/1/foremost). 
+
+``` foremost only_a_binary -t all ```
+
+Como saída obtemos um arquivo com a extensão .jfif. A flag está justamente impressa na imagem.
+
+``` MACK{Foremost_is_the_easiest_way_to_find_me} ```
+
 ### 
 
 **Enunciado**
 
 **Resolução**
 
+### 
+
+**Enunciado**
+
+**Resolução**
+
+### 
+
+**Enunciado**
+
+**Resolução**
