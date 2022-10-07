@@ -168,7 +168,7 @@ Este é o primeiro desafio de web. Ao acessar o serviço exposto, procure pela f
 
 Ao inspecionarmos o código-fonte do html, encontramos a flag como um comentário.
 
-MACK{First_flag_in_the_html_source_code} 
+``` MACK{First_flag_in_the_html_source_code} ```
 
 ----- 
 
@@ -205,7 +205,18 @@ Encontre a próxima flag lendo o conteúdo do arquivo index.php.
 
 **Resolução**
 
-Apesar de ser a terceira flag, é mais fácil resolver os outros desafios antes desse. Como a aplicação aceita inputs de novos arquivos (desafio 6), devemos inserir um payload php que nos permita acessar o conteúdo do index.php
+Apesar de ser a terceira flag, é mais fácil resolver os outros desafios antes desse. Como a aplicação aceita inputs de novos arquivos (desafio 6), devemos inserir um payload php que nos permita acessar o conteúdo do index.php.
+
+Ao inserirmos o arquivo ../payload.php com o conteúdo
+
+
+```
+<?php$homepage = file_get_contents(index.php');echo $homepage;?>
+```
+
+Ao acessarmos o arquivo inserido em ../payload.php, temos impresso no html o conteúdo do index.php. A flag encontra-se nos comentários e para encontrá-la devemos inspecionar o html da página.
+
+``` MACK{Third_flag_PhP_source_code} ```
 
 ----- 
 
