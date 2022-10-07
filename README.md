@@ -62,7 +62,11 @@ A hash possui erroneamente um espaço em branco no meio. Deve-se juntar as duas 
 
 ``` JJLECVKHKMZTGSKJGJCEWTJSG5DU2WSGGYZEYVCMGVKEQSZTKM3UOUKZKRBVQM2EI5JFSRCDJZNFKTSRGJMDEPJ5HUFA==== ```
 
-Ao colocar o texto codificado em um [identificador de hashes](https://www.dcode.fr/cipher-identifier), notamos que trata-se de base32. Essa flag funciona de maneira semelhante à anterior. Ao decodificarmos a primeira base32, obtemos outro texto codificado. Devemos novamente decodificar esse texto utilizando base32 para obtermos a flag.
+Ao colocar o texto codificado em um [identificador de hashes](https://www.dcode.fr/cipher-identifier), notamos que trata-se de base32. Essa flag funciona de maneira semelhante à anterior. Ao decodificarmos a primeira base32, obtemos outro texto codificado. 
+
+``` JVAUGS33II2DKM27GMZF62LTL5THK3S7GQYTCX3DGRYDCNZUNQ2X2=== ```
+
+Devemos novamente decodificar esse texto utilizando base32 para obtermos a flag.
 
 ``` MACK{B453_32_is_fun_411_c4p174l5} ```
 
