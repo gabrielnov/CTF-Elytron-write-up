@@ -105,20 +105,107 @@ Como saída obtemos um arquivo com a extensão .jfif. A flag está justamente im
 
 ``` MACK{Foremost_is_the_easiest_way_to_find_me} ```
 
+-----
+
+## Traffic Analysis
+
+### Investigação de Tráfego Suspeito #01
+
+**Enunciado**
+
+Uma denuncia anônima foi feita pelo canal de comunicação interno de uma empresa alegando que um dos funcionários estaria extraindo informações sigilosas para fora da empresa. Foi dito que ele estaria vazando informações diversas sobre a infraestrutura da rede interna e que estaria fazendo isso de forma furtiva pela rede. Uma captura de tráfego foi realizada durante um determinado tempo para tentar descobrir se a informação era verídica.
+
+Qual foi o protocolo utilizado para exfiltrar as informações?
+
+A flag deve estar no formado MACK{nomesemespacoeminusculo}
+
+<captura.pcap>
+
+
+**Resolução**
+
+O enunciado inclui um arquivo .pcap. Ao abrirmos o arquivo no Wireshark encontramos mais de 12000 linhas. É possível filtrar os protocolos existentes no arquivo. Como o desafio solicita apenas o nome do protocolo, o jeito menos trabalhoso é tentar diferentes protocolos na flag. Outra maneira é analizar o conteúdo dos pacotes enviados e recebidos e notar que existem bytes extras nos pacotes ICMP.
+
+``` MACK{icmp} ```
+
+### Investigação de Tráfego Suspeito #02
+
+**Enunciado**
+
+Uma denuncia anônima foi feita pelo canal de comunicação interno de uma empresa alegando que um dos funcionários estaria extraindo informações sigilosas para fora da empresa. Foi dito que ele estaria vazando informações diversas sobre a infraestrutura da rede interna e que estaria fazendo isso de forma furtiva pela rede. Uma captura de tráfego foi realizada durante um determinado tempo para tentar descobrir se a informação era verídica.
+
+Encontre a informação exfiltrada e responda às informações abaixo:
+
+1 - Qual o nome do arquivo confidencial mencionado na mensagem de exfiltração? 2 - A que horas ocorrerá a reunião do diretor mencionada na mensagem? 3 - Com qual empresa será fechado um contrato de 7 milhões de dólares? 4 - Qual a data marcada para o fechamento do contrato?
+
+Formatos das flags: MACK{99:99} MACK{dd/mm/aaaa} MACK{Arquivo.ext}
+
+**Resolução**
+
+Como já sabemos que o protocolo alvo é o ICMP, devemos analisar o conteúdo dos pacotes ICMP recebidos e enviados. É possível notar alguns bytes adicionais no final dos pacotes. Ao convertermos esses bytes para texto claro, percebemos que trata-se de uma espécie de conversa.
+
+Após muito trabalho traduzindo a conversa, obtemos as informações necessárias para resolver o desafio:
+
+**obs.: apenas uma das flags basta para resolver o desafio**
+
+``` MACK{15h30} ```
+``` MACK{13/05/2017} ```
+``` MACK{ReuniaoContratoMaio.pdf} ```
+
+-----
+
+## Web
+
+
 ### 
 
 **Enunciado**
 
 **Resolução**
 
-### 
+----- 
 
-**Enunciado**
-
-**Resolução**
 
 ### 
 
 **Enunciado**
 
 **Resolução**
+
+----- 
+
+
+### 
+
+**Enunciado**
+
+**Resolução**
+
+----- 
+
+
+### 
+
+**Enunciado**
+
+**Resolução**
+
+----- 
+
+
+### 
+
+**Enunciado**
+
+**Resolução**
+
+----- 
+
+
+### 
+
+**Enunciado**
+
+**Resolução**
+
+----- 
