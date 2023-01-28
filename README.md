@@ -58,7 +58,7 @@ Agora que você já consegue reconhecer padrões de base64, é hora de partir pa
 
 **Resolução**
 
-A hash possui erroneamente um espaço em branco no meio. Deve-se juntar as duas partes em uma só hash e decodificá-la.
+A hash possui um espaço extra em meio aos caracteres. Deve-se juntar as duas partes em uma só hash e decodificá-la.
 
 ``` JJLECVKHKMZTGSKJGJCEWTJSG5DU2WSGGYZEYVCMGVKEQSZTKM3UOUKZKRBVQM2EI5JFSRCDJZNFKTSRGJMDEPJ5HUFA==== ```
 
@@ -111,7 +111,7 @@ Este desafio requer cavar um pouco mais fundo do que apenas "strings" para encon
 
 Esse desafio inclui um arquivo executável no formato *elf* que deve ser baixado. O arquivo imprime um flag decoy ao ser executado.
 
-Podemos analisar a possibilidade de bufferoverflow, apesar de nada indicar que o arquivo recebe qualquer entrada de dados. Ao procurarmos por symbols, torna-se claro que o programa não recebe nenhum input:
+Podemos analisar a possibilidade de buffer overflow, apesar de nada indicar que o arquivo recebe qualquer entrada de dados. Ao procurarmos por symbols, torna-se claro que o programa não recebe nenhum input:
 
 ``` nm -D only_a_binary ```
 
@@ -123,7 +123,7 @@ Entretanto, o jeito mais fácil de obter a flag é utilizar o [foremost](https:/
 
 ``` foremost only_a_binary -t all ```
 
-Como saída obtemos um arquivo com a extensão .jfif. A flag está justamente impressa na imagem.
+Como saída obtemos um arquivo com a extensão .jfif. A flag está impressa na imagem gerada.
 
 ``` MACK{Foremost_is_the_easiest_way_to_find_me} ```
 
