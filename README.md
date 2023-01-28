@@ -244,14 +244,14 @@ Encontre a próxima flag lendo o conteúdo do arquivo index.php.
 
 Apesar de ser a terceira flag, é mais fácil resolver os outros desafios antes desse. Como a aplicação aceita inputs de novos arquivos (desafio 6), devemos inserir um payload php que nos permita acessar o conteúdo do index.php.
 
-Ao inserirmos o arquivo ../payload.php com o conteúdo
+Devemos criar o arquivo ../payload.php com o conteúdo
 
 
 ```
 <?php$homepage = file_get_contents(index.php');echo $homepage;?>
 ```
 
-Ao acessarmos o arquivo inserido em ../payload.php, temos impresso no html o conteúdo do index.php. A flag encontra-se nos comentários e para encontrá-la devemos inspecionar o html da página.
+Ao acessarmos o arquivo inserido em ../payload.php, temos impresso no html o conteúdo do index.php. A flag encontra-se nos comentários do html da página. Para encontrá-la basta inspecionar o código fonte.
 
 ``` MACK{Third_flag_PhP_source_code} ```
 
